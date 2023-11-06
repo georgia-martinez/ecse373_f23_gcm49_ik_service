@@ -5,10 +5,10 @@
 int main(int argc, char **argv) {
 
 	ros::init(argc, argv, "ik_client");
-    ros::NodeHandle n;
+	ros::NodeHandle n;
 
 	// Client node
-    ros::ServiceClient client = n.serviceClient<ik_service::PoseIK>("pose_ik");
+	ros::ServiceClient client = n.serviceClient<ik_service::PoseIK>("pose_ik");
 
 	// Declare a variable
 	ik_service::PoseIK ik_pose;
