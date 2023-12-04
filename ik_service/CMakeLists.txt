@@ -153,6 +153,7 @@ add_dependencies(ik_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED
 ## Specify libraries to link a library or executable target against
  target_link_libraries(ik_client
    ${catkin_LIBRARIES}
+   ur10_kin
  )
  target_link_libraries(ik_service
    ${catkin_LIBRARIES}
