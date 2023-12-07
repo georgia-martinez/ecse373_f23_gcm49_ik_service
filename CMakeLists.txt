@@ -149,11 +149,11 @@ add_executable(ik_client src/ik_client.cpp)
 
 add_dependencies(ik_service ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(ik_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
+list(FILTER catkin_LIBRARIES EXCLUDE REGEX .*libur[3|5].*)
 ## Specify libraries to link a library or executable target against
  target_link_libraries(ik_client
-   ${catkin_LIBRARIES}
    ur10_kin
+   ${catkin_LIBRARIES}
  )
  target_link_libraries(ik_service
    ${catkin_LIBRARIES}

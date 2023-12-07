@@ -16,8 +16,9 @@ bool pose_ik(ik_service::PoseIK::Request &req, ik_service::PoseIK::Response &res
 	};
 
 	res.num_sols = ur_kinematics::inverse(&T[0][0], (double *) &q_sols[0][0], 0.0);	
-
-	for (int i = 0; i < 8; i++) {
+	//res.joint_solutions.resize(res.num_sols);
+	
+	for (int i = 0; i < res.num_sols; i++) {
 		for (int j = 0; j < 6; j++) {
 			res.joint_solutions[i].joint_angles[j] = q_sols[i][j];
 		}
